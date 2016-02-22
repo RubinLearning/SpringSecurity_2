@@ -10,5 +10,6 @@
 <h2>Admin page!</h2>
 <%--<p>${serverTime}</p>--%>
 <a href="/j_spring_security_logout">Logout</a>
+<%--<a href="/logout">Logout</a>--%>
 </body>
 </html>
