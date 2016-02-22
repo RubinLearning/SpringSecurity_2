@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -7,9 +9,11 @@
     <title>Insert title here</title>
 </head>
 <body>
+
+<c:url value="/logout" var="logoutUrl" />
+
 <h2>User page!</h2>
-<%--<p>${serverTime}</p>--%>
-<a href="/j_spring_security_logout">Logout</a>
-<%--<a href="/logout">Logout</a>--%>
+<p>${serverTime}</p>
+<a href=${logoutUrl}>Logout</a>
 </body>
 </html>

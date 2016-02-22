@@ -8,30 +8,33 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
+    <link href="<c:url value="/resources/css/home.css" />" rel="stylesheet">
 </head>
 
 <body>
 
-<c:url value="/j_spring_security_check" var="loginUrl" />
+<c:url value="/login" var="loginUrl" />
 
-<c:if test="${not empty error}">
-    ${error}
-</c:if>
+<form name="form-login" action="${loginUrl}" method="POST" class="box login">
 
-<form name="form-login" action="${loginUrl}" method="POST">
-    <table>
-        <tr>
-            <td>User:</td>
-            <td><input type="text" name="user_login" value=""></td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td><input type="password" name="password_login"></td>
-        </tr>
-        <tr>
-            <td><input name="submit" type="submit" value="submit"></td>
-        </tr>
-    </table>
+    <fieldset class="boxBody">
+
+        <label> Username </label> <input type="text" name="user_login" value="">
+
+
+        <label> Password </label> <input type="password" name="password_login" value="">
+
+    </fieldset>
+
+    <footer>
+
+        <input name="submit" type="submit" class="btnLogin" value="submit">
+        <c:if test="${not empty error}">
+            <span class="error">${error}</span>
+        </c:if>
+
+    </footer>
+
 </form>
 
 </body>
